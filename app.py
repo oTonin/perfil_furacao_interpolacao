@@ -27,15 +27,15 @@ def prever_gabarito(bf):
 # Interface Streamlit
 st.set_page_config(page_title='Interpolador de Gabarito', page_icon='📏', layout='wide', initial_sidebar_state='collapsed')
 
-# Estilo personalizado
+# Estilo personalizado com detecção de tema
 st.markdown(
     """
     <style>
     .stApp {
-        background-color: #E8F1F2;
+        background-color: var(--background-color);
     }
     .stMarkdown h1, .css-1d391kg p {
-        color: #000000;
+        color: var(--text-color);
     }
     .css-18e3th9 {
         padding-top: 3rem;
@@ -84,6 +84,16 @@ st.markdown(
         text-align: center;
     }
     </style>
+    <script>
+    const darkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (darkMode) {
+        document.documentElement.style.setProperty('--background-color', '#13293D');
+        document.documentElement.style.setProperty('--text-color', '#FFFFFF');
+    } else {
+        document.documentElement.style.setProperty('--background-color', '#E8F1F2');
+        document.documentElement.style.setProperty('--text-color', '#000000');
+    }
+    </script>
     """,
     unsafe_allow_html=True
 )
