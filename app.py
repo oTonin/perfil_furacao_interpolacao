@@ -34,6 +34,9 @@ st.markdown(
     .stApp {
         background-color: #E8F1F2;
     }
+    .stMarkdown h1, .css-1d391kg p {
+        color: #000000;
+    }
     .css-18e3th9 {
         padding-top: 3rem;
     }
@@ -86,7 +89,7 @@ st.markdown(
 )
 
 # Título da página
-st.title('Interpolador de Gabarito de Furação')
+st.title('Interpolador de Gabarito de Furação', help='')
 
 # Layout com duas colunas
 col1, col2 = st.columns([2, 1], gap="large")
